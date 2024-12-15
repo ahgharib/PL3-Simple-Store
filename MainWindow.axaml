@@ -16,7 +16,31 @@
                    HorizontalAlignment="Center" 
                    Margin="0,20,0,60" 
                    DockPanel.Dock="Top"/>
-
+        <!-- Cart Section -->
+        <StackPanel DockPanel.Dock="Right" Width="200" Margin="10">
+            <TextBlock Text="Cart" FontSize="20" FontWeight="Bold" Margin="10"/>
+            <ListBox x:Name="CartListBox">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type local:Product}">
+                        <StackPanel>
+                            <TextBlock FontSize="15" FontWeight="Bold"  Margin="0 0 0 10" Text="{Binding Name}" />
+                            <TextBlock FontSize="15" Margin="30 0 0 10" Text="{Binding Price, StringFormat='{}{0} EGP'}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <!-- Placeholder TextBlock for an empty cart -->
+            <TextBlock x:Name="CartEmptyMessage"
+                    Text="Empty" 
+                    FontSize="20" 
+                    FontWeight="Bold" 
+                    HorizontalAlignment="Center" 
+                    Margin="10"/>
+            <Button x:Name="RemoveItem" Content="Remove Item" HorizontalAlignment="Center" Margin="10"/>
+            <!-- <Button x:Name="CheckoutButton" Content="Checkout" HorizontalAlignment="Center" Margin="10"/> -->
+            <!-- Display Total Price -->
+            <TextBlock x:Name="TotalPriceLabel" Text="" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="10"/>
+        </StackPanel>    
     </DockPanel>
 
 </Window>
