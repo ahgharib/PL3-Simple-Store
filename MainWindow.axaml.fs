@@ -23,3 +23,22 @@ type MainWindow() as this =
         )
     
     let cart = ObservableCollection<Product>()
+
+
+    // Load the XAML before accessing controls
+    do
+        // **Important: Load the XAML first**
+        AvaloniaXamlLoader.Load(this)
+
+        // **Now get the controls after XAML is loaded**
+        let cartListBox : ListBox = this.FindControl("CartListBox")
+        let productsListBox : ListBox = this.FindControl("ProductsListBox")
+        let addButton : Button = this.FindControl("AddToCartButton")
+        let removeButton : Button = this.FindControl("RemoveItem")
+        // let checkoutButton : Button = this.FindControl("CheckoutButton")
+        let totalPriceLabel : TextBlock = this.FindControl("TotalPriceLabel")
+        let cartEmptyMessage : TextBlock = this.FindControl("CartEmptyMessage")
+
+        // Bind the products to the ListBox using ItemsSource
+        productsListBox.ItemsSource <- products
+        cartListBox.ItemsSource <- cart
