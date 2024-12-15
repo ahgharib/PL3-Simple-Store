@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SimpleStoreSimulator"
+        x:Class="SimpleStoreSimulator.MainWindow"
+        Title="Simple Store Simulator"
+        Width="800" Height="600">
+
+    <DockPanel>
+
+    <!-- <TextBlock Text="Store Simulator" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"/> -->
+
+    <TextBlock Text="Simple Store Simulator" 
+                   FontSize="28" 
+                   FontWeight="Bold" 
+                   HorizontalAlignment="Center" 
+                   Margin="0,20,0,60" 
+                   DockPanel.Dock="Top"/>
+
+    </DockPanel>
+
+</Window>
